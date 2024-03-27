@@ -26,7 +26,9 @@ if __name__ == "__main__":
         f.write(pogo_apk.content)
     with zipfile.ZipFile("pogo.zip","r") as z:
         z.extract(f'lib/{ARCH}/libNianticLabsPlugin.so')
-    shutil.copyfile(f'./lib/{ARCH}/libNianticLabsPlugin.so', './pogo.so')
+    if not os.path.exists(ARCH):
+        os.makedirs(ARCH)
+    shutil.copyfile(f'./lib/{ARCH}/libNianticLabsPlugin.so', './' + ARCH + '/pogo.so')
     os.remove(f'./lib/{ARCH}/libNianticLabsPlugin.so')
     os.rmdir(f'./lib/{ARCH}')
     os.rmdir(f'./lib')
