@@ -28,7 +28,7 @@ if __name__ == "__main__":
         z.extract(f'lib/{ARCH}/libNianticLabsPlugin.so')
     if not os.path.exists(ARCH):
         os.makedirs(ARCH)
-    shutil.copyfile(f'./lib/{ARCH}/libNianticLabsPlugin.so', './' + ARCH + '/pogo.so')
+    shutil.copyfile(f'./lib/{ARCH}/libNianticLabsPlugin.so', './' + ARCH + '/libNianticLabsPlugin.so')
     os.remove(f'./lib/{ARCH}/libNianticLabsPlugin.so')
     os.rmdir(f'./lib/{ARCH}')
     os.rmdir(f'./lib')
