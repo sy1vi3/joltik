@@ -164,3 +164,4 @@ cython_debug/
 # specifically for joltik
 arm64-v8a/
 armeabi-v7a/
+*.zip
